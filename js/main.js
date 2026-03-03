@@ -1,4 +1,5 @@
 let allGames = [];
+let activeFilters = [];
 
 const grid = document.getElementById("gameGrid");
 const filterButtons = document.querySelectorAll(".filters button");
@@ -31,16 +32,45 @@ function renderGames(games) {
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     const filterValue = button.dataset.filter;
-    filterButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
 
     if (filterValue === "all") {
+      activeFilters = [];
+
+      filterButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active"); // Make "All" active again
       renderGames(allGames);
-    } else {
-      const filteredGames = allGames.filter(game =>
-        game.tags.includes(filterValue)
-      );
-      renderGames(filteredGames);
+      return;
     }
+
+    if (activeFilters.includes(filterValue)) {
+      activeFilters = activeFilters.filter(f => f !== filterValue);
+      button.classList.remove("active");
+    } else {
+      activeFilters.push(filterValue);
+      button.classList.add("active");
+    }
+
+    // Deactivate "All" when other filters are used
+    document.querySelector('[data-filter="all"]').classList.remove("active");
+    
+    applyFilters();
   });
 });
+
+function applyFilters() {
+  if (activeFilters.length === 0) {
+    renderGames(allGames);
+    return;
+  }
+
+  const filteredGames = allGames.filter(game =>
+    activeFilters.every(filter =>
+      game.tags.includes(filter)
+    )
+  );
+
+  renderGames(filteredGames);
+}

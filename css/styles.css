@@ -5,6 +5,11 @@
   margin-bottom: 10px;
 }
 
+.filters button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 .filters button.active {
   background-color: black;
   color: white;
