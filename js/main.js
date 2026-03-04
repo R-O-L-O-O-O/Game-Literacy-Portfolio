@@ -24,6 +24,7 @@ function renderGames(games) {
 
     // IMPORTANT: this must stay inside the forEach
     card.addEventListener("click", () => {
+      window.location.href = `game.html?title=${encodeURIComponent(game.title)}`;
       document.getElementById("modalImage").src = game.image;
       document.getElementById("modalTitle").textContent = game.title;
       document.getElementById("modalPlatform").textContent = "Platform: " + game.platform;

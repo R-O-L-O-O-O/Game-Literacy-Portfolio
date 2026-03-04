@@ -1,11 +1,20 @@
+/* ============================= */
+/* GLOBAL PAGE STYLES */
+/* ============================= */
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212; /* deep charcoal */
-  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #121212;
+  color: white;
 }
 
-.rolo {
+
+/* ============================= */
+/* HERO SECTION (MAIN PAGE) */
+/* ============================= */
+
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,40 +42,44 @@ body {
 .site-subtitle {
   max-width: 650px;
   font-size: 1.1rem;
-  color: #cccccc; /* softened white */
+  color: #cccccc;
   line-height: 1.6;
 }
 
-button {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ff6a00;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
 
-button:hover {
-  background-color: #ff6a00;
-  color: #121212;
-}
+/* ============================= */
+/* FILTER BUTTONS */
+/* ============================= */
 
-.game-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .filters button {
+  background: transparent;
+  color: white;
+  border: 2px solid #ff6a00;
+  padding: 8px 14px;
+  margin: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.filters button.active {
-  background-color: black;
-  color: white;
+.filters button:hover {
+  background: #ff6a00;
+  color: #121212;
 }
+
+.filters button.active {
+  background: #ff6a00;
+  color: #121212;
+}
+
+
+/* ============================= */
+/* GAME GRID */
+/* ============================= */
 
 .game-grid {
   display: grid;
@@ -75,17 +88,21 @@ button:hover {
   padding: 20px;
 }
 
+
+/* ============================= */
+/* GAME CARDS */
+/* ============================= */
+
 .game-card {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  background: #111;
-  background-color: #1e1e1e;
+  background: #1e1e1e;
 }
 
 .game-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(255, 106, 0, 0.2);
 }
 
@@ -96,38 +113,92 @@ button:hover {
   display: block;
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.modal.hidden {
-  display: none;
-}
+/* ============================= */
+/* GAME DETAIL PAGE */
+/* ============================= */
 
-.modal-content {
-  background: #222;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
+.game-detail {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
   text-align: center;
 }
 
-#modalImage {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+.detail-cover {
+  width: 300px;
+  border-radius: 10px;
+  margin: 1.5rem 0;
 }
 
-#closeModal {
+.back-button {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* ============================= */
+/* GAME HERO BANNER */
+/* ============================= */
+
+.game-hero {
+  position: relative;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: inset 0 -80px 120px rgba(0,0,0,0.8);
+}
+
+.hero-overlay {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  cursor: pointer;
-  font-size: 28px;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.3)
+  );
+}
+
+.hero-content {
+  position: relative;
+  padding: 40px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-content p {
+  color: #ff6a00;
+  font-weight: bold;
+}
+
+.game-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: #ff6a00;
+}
+
+
+/* ============================= */
+/* TAGS */
+/* ============================= */
+
+.tag {
+  display: inline-block;
+  background: #ff6a00;
+  color: black;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.85rem;
 }
