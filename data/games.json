@@ -7,9 +7,16 @@
     "image": "assets/images/FFXVI_Cover.jpg"
   },
   {
+    "title": "Final Fantasy X",
+    "platform": "PS2",
+    "tags": ["narrative", "singleplayer", "rpg", "adventure"],
+    "insight": "Final Fantasy X, released in 2001, is widely considered one of the best games in the renowned Final Fantasy series. With its captivating story, lovable characters, and innovative gameplay mechanics, FFX sets the bar high for other role-playing games. In this article, we’ll dive into the reasons why Final Fantasy X stands out as the best in the series. Final Fantasy X introduces the Conditional Turn-Based Battle (CTB) system, which revolutionized turn-based combat. The system allows for real-time strategic decisions, making battles feel more dynamic and immersive. The Active Time Battle (ATB) system also makes a return, adding an element of speed and reaction time to combat. ",
+    "image": "assets/images/FFX_Cover.jpg"
+  },
+  {
     "title": "Halo 3",
     "platform": "Xbox 360",
-    "tags": ["shooter"],
+    "tags": ["shooter", "singleplayer", "multiplayer"],
     "insight": "Halo 3, released in 2007, built upon the success of its predecessors and played a crucial role in popularizing online multiplayer gaming on consoles. With the introduction of Xbox Live, players could connect and compete globally, setting a standard for future multiplayer experiences. The game's success demonstrated the viability of online gaming, leading to a surge in multiplayer-focused titles across various genres, including shooters and action-adventure games.",
     "image": "assets/images/Halo3_Cover.jpg"
   }
