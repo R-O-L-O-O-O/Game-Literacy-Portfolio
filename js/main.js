@@ -20,10 +20,17 @@ function renderGames(games) {
 
     card.innerHTML = `
       <img src="${game.image}" alt="${game.title}" class="game-image">
-      <h2>${game.title}</h2>
-      <p><strong>Platform:</strong> ${game.platform}</p>
-      <p>${game.insight}</p>
     `;
+
+    // IMPORTANT: this must stay inside the forEach
+    card.addEventListener("click", () => {
+      document.getElementById("modalImage").src = game.image;
+      document.getElementById("modalTitle").textContent = game.title;
+      document.getElementById("modalPlatform").textContent = "Platform: " + game.platform;
+      document.getElementById("modalInsight").textContent = game.insight;
+
+      document.getElementById("gameModal").classList.remove("hidden");
+    });
 
     grid.appendChild(card);
   });
@@ -55,7 +62,7 @@ filterButtons.forEach(button => {
 
     // Deactivate "All" when other filters are used
     document.querySelector('[data-filter="all"]').classList.remove("active");
-    
+
     applyFilters();
   });
 });
@@ -74,3 +81,7 @@ function applyFilters() {
 
   renderGames(filteredGames);
 }
+
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("gameModal").classList.add("hidden");
+});
