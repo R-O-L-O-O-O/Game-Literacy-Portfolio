@@ -14,9 +14,12 @@ fetch("data/games.json")
     document.getElementById("gamePlatform").textContent = game.platform;
     document.getElementById("gameImage").src = game.image;
     document.getElementById("gameInsight").textContent = game.insight;
+    document.getElementById("coverImage").src = game.image;
+    document.getElementById("gameTrailer").src = game.trailer;
+    document.getElementById("gameReview").textContent = game.review;
 
     const tagsContainer = document.getElementById("gameTags");
-
+ 
     game.tags.forEach(tag => {
       const tagEl = document.createElement("span");
       tagEl.classList.add("tag");

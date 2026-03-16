@@ -202,3 +202,42 @@ body {
   border-radius: 20px;
   font-size: 0.85rem;
 }
+
+/* ============================= */
+/* INFO CAROUSEL */
+/* ============================= */
+
+.info-carousel {
+  overflow-x: auto;
+  padding: 40px 20px;
+}
+
+.info-track {
+  display: flex;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.info-card {
+  min-width: 320px;
+  max-width: 320px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: start;
+}
+
+.info-card h2 {
+  color: #ff6a00;
+  margin-top: 0;
+}
+
+.info-card img,
+.info-card iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.info-carousel::-webkit-scrollbar {
+  display: none;
+}

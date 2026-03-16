@@ -5,7 +5,8 @@
     "tags": ["narrative", "action", "singleplayer"],
     "insight": "Final Fantasy 16 is the series’ first full-fledged action-RPG, fully doing away with the classic turn-based battle system it has long been known for and takes FF15’s action-combat to a whole-new level of complexity and depth. With Devil May Cry(DMC) combat director Ryota Suzuki on board, FF16 is the most modern evolution of stylish combo-driven combat that made the DMC series so popular.",
     "image": "assets/images/FFXVI_Cover.jpg",
-    "banner": "assets/images/FFXVI_Banner.jpg"
+    "banner": "assets/images/FFXVI_Banner.jpg",
+    "trailer": "https://youtube.com/embed/aPT26Dd3OzE"
   },
   {
     "title": "Final Fantasy X",
@@ -19,6 +20,12 @@
     "platform": "Xbox 360",
     "tags": ["shooter", "singleplayer", "multiplayer"],
     "insight": "Halo 3, released in 2007, built upon the success of its predecessors and played a crucial role in popularizing online multiplayer gaming on consoles. With the introduction of Xbox Live, players could connect and compete globally, setting a standard for future multiplayer experiences. The game's success demonstrated the viability of online gaming, leading to a surge in multiplayer-focused titles across various genres, including shooters and action-adventure games.",
-    "image": "assets/images/Halo3_Cover.jpg"
+    "image": "assets/images/Halo3_Cover.jpg",
+    "trailer": "https://www.youtube.com/embed/T9Ezd2FqxAU",
+    "screenshots": [
+    "assets/images/halo3_1.jpg",
+    "assets/images/halo3_2.jpg"
+    ],
+    "review": "One of the most influential multiplayer shooters ever created."
   }
 ]
