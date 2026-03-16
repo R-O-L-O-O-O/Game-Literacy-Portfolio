@@ -12,7 +12,6 @@ fetch("data/games.json")
     document.getElementById("gameHero").style.backgroundImage = `url(${game.banner})`;
     document.getElementById("gameTitle").textContent = game.title;
     document.getElementById("gamePlatform").textContent = game.platform;
-    document.getElementById("gameImage").src = game.image;
     document.getElementById("gameInsight").textContent = game.insight;
     document.getElementById("coverImage").src = game.image;
     document.getElementById("gameTrailer").src = game.trailer;
