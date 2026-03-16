@@ -146,12 +146,12 @@ body {
 
 .game-hero {
   position: relative;
-  height: 420px;
+  height: 35vh;
+  max-height: 340px;
   background-size: cover;
-  background-position: center;
+  background-position: center 35%;
   display: flex;
   align-items: flex-end;
-  box-shadow: inset 0 -80px 120px rgba(0,0,0,0.8);
 }
 
 .hero-overlay {
@@ -183,9 +183,10 @@ body {
   content: "";
   position: absolute;
   bottom: 0;
-  height: 4px;
+  height: 3px;
   width: 100%;
   background: #ff6a00;
+  box-shadow: 0 0 8px rgba(255,106,0,0.6);
 }
 
 
@@ -201,6 +202,60 @@ body {
   margin: 5px;
   border-radius: 20px;
   font-size: 0.85rem;
+}
+
+/* ============================= */
+/* SCREENSHOT GALLERY */
+/* ============================= */
+
+.screenshot-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.screenshot-gallery img {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screenshot-gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(255,106,0,0.4);
+}
+
+/* Hide scrollbar */
+.screenshot-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================= */
+/* LIGHTBOX VIEWER */
+/* ============================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* ============================= */

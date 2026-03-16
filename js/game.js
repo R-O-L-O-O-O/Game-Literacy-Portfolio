@@ -26,4 +26,24 @@ fetch("data/games.json")
       tagsContainer.appendChild(tagEl);
     });
 
+    const screenshotContainer = document.getElementById("gameScreenshots");
+
+    game.screenshots.forEach(src => {
+
+      const img = document.createElement("img");
+      img.src = src;
+
+      img.addEventListener("click", () => {
+        document.getElementById("lightboxImage").src = src;
+        document.getElementById("lightbox").classList.remove("hidden");
+      });
+
+      screenshotContainer.appendChild(img);
+
+    });
+
+    document.getElementById("lightbox").addEventListener("click", () => {
+      document.getElementById("lightbox").classList.add("hidden");
+    });
+
   });
