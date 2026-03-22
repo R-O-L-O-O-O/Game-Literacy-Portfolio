@@ -144,6 +144,14 @@ body {
 /* GAME HERO BANNER */
 /* ============================= */
 
+#coverImage {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;   /* 👈 prevents cropping */
+  border-radius: 8px;
+}
+
 .game-hero {
   position: relative;
   height: 35vh;
@@ -209,14 +217,15 @@ body {
 /* ============================= */
 
 .screenshots-card {
-  height: 200px;
-}
+  height: 300px;
+} 
 
 .screenshot-gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
-  overflow-x: auto;
-  flex: 1;
+
+  height: 50%;
 }
 
 .screenshot-gallery::after {
@@ -230,9 +239,23 @@ body {
 }
 
 .screenshot-gallery img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
+  height: 200px;
+  aspect-ratio: 16 / 9;
+  grid-column: span 2;
+
+  object-fit: cover;   /* 👈 keeps images clean */
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screenshot-gallery img:first-child {
+  grid-column: span 4;
+}
+
+.screenshot-gallery img:last-child:nth-child(odd) {
+  grid-column: span 2;
 }
 
 .screenshot-gallery img:hover {
@@ -301,21 +324,32 @@ body {
 /* ============================= */
 
 .info-carousel {
-  overflow-x: auto;
+  overflow: hidden;
   padding: 40px 20px;
 }
 
 .info-track {
-  display: flex;
+  display: flex;              /* 👈 CRITICAL */
   gap: 30px;
+
+  overflow-x: auto;           /* horizontal scroll */
+  overflow-y: hidden;         /* prevent vertical scroll */
+
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  padding: 20px;
+  padding-left: 50vw;
+  padding-right: 50vw;
 }
 
 .info-card {
-  min-height: 800px;
-  min-width: 500px;
+  min-width: 1000px;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
 .info-card h2 {
