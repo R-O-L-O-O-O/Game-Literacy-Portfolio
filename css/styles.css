@@ -106,6 +106,54 @@ body {
   box-shadow: 0 10px 20px rgba(255, 106, 0, 0.2);
 }
 
+.hero-genres {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.description-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.description-card {
+  min-width: 900px;   /* 👈 wider than other cards */
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.description-content {
+  display: flex;
+  gap: 40px;
+}
+
+.description-text {
+  flex: 2;
+  line-height: 1.6;
+}
+
+.description-meta {
+  flex: 1;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genre-tag {
+  background: rgba(255, 106, 0, 0.15);
+  color: #ff6a00;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
 .game-image {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -147,7 +195,7 @@ body {
 #coverImage {
   width: 100%;
   height: auto;
-  max-height: 700px;
+  max-height: 1000px;
   object-fit: contain;   /* 👈 prevents cropping */
   border-radius: 8px;
 }
@@ -217,13 +265,14 @@ body {
 /* ============================= */
 
 .screenshots-card {
-  height: 300px;
+  height: 1000px;
 } 
 
 .screenshot-gallery {
   display: grid;
+  
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  gap: 5px;
 
   height: 50%;
 }
@@ -335,22 +384,29 @@ body {
   overflow-x: auto;           /* horizontal scroll */
   overflow-y: hidden;         /* prevent vertical scroll */
 
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 
   padding: 20px;
-  padding-left: 50vw;
-  padding-right: 50vw;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.info-track::-webkit-scrollbar {
+  display: none;
 }
 
 .info-card {
-  min-width: 1000px;
-  min-height: 1000px;
+  scroll-snap-align: start;
+  min-width: 900px;
+  min-height: 450px;
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
+  justify-content: flex-start; /* 👈 ensures content starts at top */
+  overflow: hidden;
 }
+
 
 .info-card h2 {
   color: #ff6a00;

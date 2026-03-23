@@ -14,19 +14,19 @@ fetch("data/games.json")
 
     document.getElementById("gameHero").style.backgroundImage = `url(${game.banner})`;
     document.getElementById("gameTitle").textContent = game.title;
-    document.getElementById("gamePlatform").textContent = game.platform;
-    document.getElementById("gameInsight").textContent = game.insight;
+    document.getElementById("gamePlatformMeta").textContent = game.platform;
+    document.getElementById("gameDescription").textContent = game.insight;
     document.getElementById("coverImage").src = game.image;
     document.getElementById("gameTrailer").src = game.trailer;
     document.getElementById("gameReview").textContent = game.review;
 
-    const tagsContainer = document.getElementById("gameTags");
- 
+    const genresContainer = document.getElementById("gameGenres");
+
     game.tags.forEach(tag => {
-      const tagEl = document.createElement("span");
-      tagEl.classList.add("tag");
-      tagEl.textContent = tag;
-      tagsContainer.appendChild(tagEl);
+      const span = document.createElement("span");
+      span.textContent = tag;
+      span.classList.add("genre-tag");
+      genresContainer.appendChild(span);
     });
 
     const screenshotContainer = document.getElementById("gameScreenshots");

@@ -15,6 +15,7 @@
   <div class="hero-content">
     <h1 id="gameTitle"></h1>
     <p id="gamePlatform"></p>
+    <div id="heroGenres" class="hero-genres"></div>
   </div>
 
 </header>
@@ -28,19 +29,36 @@
       <img id="coverImage">
     </div>
 
+    <div class="info-card description-card">
+      <h2>Description</h2>
+
+      <div class="description-content">
+
+        <div class="description-text">
+          <p id="gameDescription"></p>
+        </div>
+
+        <div class="description-meta">
+
+          <div class="meta-group">
+            <h3>Genres</h3>
+            <div id="gameGenres" class="genre-list"></div>
+          </div>
+
+          <div class="meta-group">
+            <h3>Platform</h3>
+            <p id="gamePlatformMeta"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
     <div class="info-card">
       <h2>Trailer</h2>
       <iframe id="gameTrailer" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="info-card">
-      <h2>Description</h2>
-      <p id="gameInsight"></p>
-    </div>
-
-    <div class="info-card">
-      <h2>Genres</h2>
-      <div id="gameTags"></div>
     </div>
 
     <div class="info-card screenshots-card">
@@ -54,16 +72,6 @@
     </div>
 
   </div>
-
-</section>
-
-<section class="game-detail">
-
-<p id="gameInsight"></p>
-
-<div id="gameTags"></div>
-
-<a href="index.html" class="back-button">← Back to Game Library</a>
 
 </section>
 
